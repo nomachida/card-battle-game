@@ -1,0 +1,179 @@
+{
+    "game_name": "カードバトルゲーム",
+    "game_type": "card_battle",
+    "description": "Slay the Spire風のデッキ構築型カードバトルゲーム",
+    "features": {
+        "graphics": {
+            "resolution": {
+                "width": 1280,
+                "height": 720
+            },
+            "sprites": {
+                "card": {
+                    "size": [
+                        120,
+                        160
+                    ]
+                },
+                "character": {
+                    "size": [
+                        128,
+                        128
+                    ]
+                },
+                "enemy": {
+                    "size": [
+                        128,
+                        128
+                    ]
+                },
+                "status_icons": {
+                    "size": [
+                        32,
+                        32
+                    ]
+                }
+            }
+        },
+        "gameplay": {
+            "player": {
+                "max_health": 80,
+                "starting_energy": 3,
+                "hand_size": 5,
+                "deck": [
+                    {
+                        "id": "strike",
+                        "count": 5
+                    },
+                    {
+                        "id": "defend",
+                        "count": 4
+                    },
+                    {
+                        "id": "bash",
+                        "count": 1
+                    }
+                ]
+            },
+            "cards": {
+                "strike": {
+                    "name": "ストライク",
+                    "type": "attack",
+                    "cost": 1,
+                    "damage": 6,
+                    "description": "6ダメージを与える"
+                },
+                "defend": {
+                    "name": "防御",
+                    "type": "skill",
+                    "cost": 1,
+                    "block": 5,
+                    "description": "5ブロックを得る"
+                },
+                "bash": {
+                    "name": "バッシュ",
+                    "type": "attack",
+                    "cost": 2,
+                    "damage": 8,
+                    "effects": [
+                        {
+                            "type": "vulnerable",
+                            "amount": 2
+                        }
+                    ],
+                    "description": "8ダメージを与え、脆弱を2付与する"
+                },
+                "iron_wave": {
+                    "name": "アイアンウェーブ",
+                    "type": "attack",
+                    "cost": 1,
+                    "damage": 5,
+                    "block": 5,
+                    "description": "5ダメージを与え、5ブロックを得る"
+                }
+            },
+            "enemies": {
+                "slime": {
+                    "name": "スライム",
+                    "max_health": 30,
+                    "actions": [
+                        {
+                            "type": "attack",
+                            "damage": 8,
+                            "weight": 70
+                        },
+                        {
+                            "type": "defend",
+                            "block": 6,
+                            "weight": 30
+                        }
+                    ]
+                },
+                "cultist": {
+                    "name": "カルティスト",
+                    "max_health": 45,
+                    "actions": [
+                        {
+                            "type": "attack",
+                            "damage": 6,
+                            "weight": 60
+                        },
+                        {
+                            "type": "buff",
+                            "effect": "strength",
+                            "amount": 3,
+                            "weight": 40
+                        }
+                    ]
+                }
+            },
+            "status_effects": {
+                "vulnerable": {
+                    "name": "脆弱",
+                    "description": "受けるダメージが50%増加",
+                    "modifier": 1.5
+                },
+                "weak": {
+                    "name": "虚弱",
+                    "description": "与えるダメージが25%減少",
+                    "modifier": 0.75
+                },
+                "strength": {
+                    "name": "筋力",
+                    "description": "与えるダメージが増加",
+                    "modifier": 1
+                }
+            }
+        },
+        "ui": {
+            "card_positions": {
+                "deck": {
+                    "x": 1180,
+                    "y": 600
+                },
+                "discard": {
+                    "x": 100,
+                    "y": 600
+                },
+                "hand": {
+                    "x": 640,
+                    "y": 600
+                }
+            },
+            "status": {
+                "player": {
+                    "x": 200,
+                    "y": 200
+                },
+                "enemy": {
+                    "x": 1000,
+                    "y": 200
+                }
+            },
+            "energy": {
+                "x": 100,
+                "y": 500
+            }
+        }
+    }
+}
